@@ -1,4 +1,5 @@
-#CodeInterpreter-Assistant
+CodeInterpreter-Assistant
+
 Welcome to the CodeInterpreter-Assistant repository! This Python-based tool integrates seamlessly with OpenAI's API to facilitate advanced data handling, code execution, and dynamic interaction capabilities in your projects. It's designed to help developers, researchers, and data scientists automate and streamline their workflows using OpenAI's powerful AI models.
 
 Features
