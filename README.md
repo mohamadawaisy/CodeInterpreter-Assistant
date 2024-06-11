@@ -1,19 +1,19 @@
-# CodeInterpreter-Assistant
+# AI Assistant with OpenAI
 
-This repository is a proof-of-concept integration of OpenAI's Assistant and Code Interpreter APIs. It provides the capability to create an assistant, manage threads, and run code, allowing users to ask questions with follow-up inquiries about a data file.
+This repository contains the code for building and deploying an AI Assistant using OpenAI's API, which includes capabilities for processing and analyzing data with a powerful code interpreter. This AI Assistant is designed to interact with backend systems, providing data-driven insights and automated responses based on natural language queries.
 
 ## Features
 
-- **Assistant Creation**: Set up an AI assistant tailored to your needs.
-- **Thread Management**: Create and manage execution threads for interactive sessions.
-- **Code Execution**: Run code snippets and handle data file queries interactively.
-- **Follow-Up Questions**: Ask sequential questions about a data file, enhancing the interactivity.
+- **AI Assistant Initialization**: Set up an AI assistant that can execute code, analyze data, and provide actionable insights.
+- **Data File Management**: Upload and manage files directly through the OpenAI API, allowing the AI to work with specific datasets.
+- **Advanced Data Analysis**: Use the code interpreter tool to process data queries and return results including diagrams, charts, and CSV files.
+- **Logging and Error Handling**: Incorporate sophisticated logging for debugging and monitoring the assistant’s operations.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.8 or later
 - OpenAI API key
 
 ### Installation
@@ -46,31 +46,30 @@ This repository is a proof-of-concept integration of OpenAI's Assistant and Code
 1. Import the `DataAssistant` class:
 
     ```python
-    from data_assistant_project import DataAssistant
+    from data_assistant.assistant import DataAssistant
     ```
 
 2. Initialize the `DataAssistant`:
 
     ```python
-    assistant = DataAssistant(config_path='config.json')
+    assistant = DataAssistant("path_to_your_data_file.csv")
     ```
 
-3. Create an assistant and manage threads:
+3. Interact with the AI Assistant:
 
     ```python
-    # Create a thread
-    thread_id = assistant.create_thread()
-
-    # Upload a file
-    assistant.upload_file(thread_id, 'example.py')
-
-    # Execute code and ask questions
-    result = assistant.execute_code(thread_id, 'print("Hello, World!")')
-    print(result)
+    # Ask a question
+    response = assistant.ask_question("What insights can you provide about recent sales data?")
+    print(response)
 
     # Follow-up question
-    follow_up = assistant.ask_follow_up(thread_id, 'Can you process the data in example.py?')
-    print(follow_up)
+    follow_up_question = "Can you break down the sales by product category?"
+    follow_up_response = assistant.follow_up_question(follow_up_question)
+    print(follow_up_response)
+
+    # Advanced Data Analysis
+    analysis_result = assistant.ask_question("Generate a sales forecast for the next quarter.")
+    print(analysis_result)
     ```
 
 ## Contributing
@@ -80,6 +79,13 @@ Contributions are welcome! Fork the repository and submit a pull request.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or support, please open an issue on the GitHub repository.
+
+Project Link: [https://github.com/mohamadawaisy/CodeInterpreter-Assistant](https://github.com/mohamadawaisy/CodeInterpreter-Assistant)
+
 
 ## Contact
 
