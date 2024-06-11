@@ -1,18 +1,32 @@
-# CodeInterpreter-Assistant
-This repository hosts the DataAssistant, a robust Python class designed to integrate seamlessly with OpenAI's API. It facilitates the creation, management, and interaction with threads, assistants, and file uploads specifically tailored to handle and execute code.
+#CodeInterpreter-Assistant
+Welcome to the CodeInterpreter-Assistant repository! This Python-based tool integrates seamlessly with OpenAI's API to facilitate advanced data handling, code execution, and dynamic interaction capabilities in your projects. It's designed to help developers, researchers, and data scientists automate and streamline their workflows using OpenAI's powerful AI models.
 
-Key Features:
+Features
+Thread Management: Create and manage execution threads for concurrent operations.
+Dynamic Assistant Creation: Set up multiple assistants to handle various tasks.
+File Management: Upload and manage files within the code execution context.
+Code Execution: Execute and manage Python code snippets dynamically.
+Getting Started
+Prerequisites
+Python 3.8 or higher
+OpenAI API key
+Installation
+Clone the repository to your local machine:
 
-File Management: Automatically handles file uploads necessary for data processing and interaction.
-Assistant Creation: Easily sets up and configures custom OpenAI Assistants designed to interact with data-driven queries.
-Thread Management: Manages threads for ongoing conversations and data interactions, providing a structured approach to querying and response handling.
-Code Execution: Includes a code interpreter tool that allows dynamic execution of code snippets, enhancing the assistant's ability to process and analyze data directly through OpenAI's platform.
-Ideal Use-Cases:
+bash
+Copy code
+git clone https://github.com/mohamadawaisy/CodeInterpreter-Assistant.git
+cd CodeInterpreter-Assistant
+Install the required dependencies:
 
-Developers looking to build AI-powered data analysis tools.
-Teams in need of a scalable solution to manage data queries and responses via AI.
-Researchers requiring automated, intelligent data processing and visualization.
-Getting Started:
-To get started with the DataAssistant, clone the repository, set your OpenAI API key as an environment variable, and refer to the README for installation and operation instructions.
+bash
+Copy code
+pip install -r requirements.txt
+Configuration
+Create a config.json in the root directory and insert your OpenAI API key:
 
-This repository is an excellent resource for anyone looking to enhance their applications with powerful AI capabilities, providing both the tools and the framework necessary for advanced data interaction.
+json
+Copy code
+{
+  "openai_api_key": "your-openai-api-key-here"
+}
