@@ -65,3 +65,13 @@ def follow_up():
 def reset_config():
     message = api_interface.reset_configuration()
     return jsonify({"message": message}), 200
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    """
+    Health check endpoint to verify that the API is running.
+    """
+    return jsonify({"status": "healthy"}), 200
+
+if __name__ == "__main__":
+    app.run(debug=True)

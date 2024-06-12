@@ -22,7 +22,7 @@ class Main:
         elif mode == 'api':
             if args.prod:
                 # Run the API using gunicorn
-                subprocess.run(['gunicorn', '-w', '4', '-b', '127.0.0.1:5000', 'api_interface:app'])
+                subprocess.run(['gunicorn', '-w', '4', '-b', '127.0.0.1:8080', 'api_interface:app'])
             else:
                 from api_interface import app
                 app.run(debug=True)
