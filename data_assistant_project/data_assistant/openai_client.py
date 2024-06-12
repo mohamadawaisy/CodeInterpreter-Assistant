@@ -12,10 +12,10 @@ class OpenAIClient:
             purpose='assistants'
         )
 
-    def create_assistant(self, file_id):
+    def create_assistant(self, file_id, assistant_name, assistant_instruction):
         return self.client.beta.assistants.create(
-            name="ASSISTANT data API",
-            instructions="You are a helpful assistant; you answer questions based on data and provide charts and graphs to support your answers and insights.",
+            name=assistant_name,
+            instructions=assistant_instruction,
             tools=[{"type": "code_interpreter"}],
             tool_resources={"code_interpreter": {"file_ids": [file_id]}},
             model="gpt-4o",

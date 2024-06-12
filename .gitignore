@@ -1,0 +1,6 @@
+data_assistant_project/assistants
+data_assistant_project/venv
+data_assistant_project/data_assistant/__pycache__
+data_assistant_project/__pycache__
+.DS_Store
+data_assistant_project/assistant_config.json

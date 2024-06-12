@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 
 class DataAssistant:
-    def __init__(self, file_path, base_dir="assistants", log_file="assistant_log.txt"):
+    def __init__(self, file_path, name, instruction, base_dir="assistants", log_file="assistant_log.txt"):
         self.file_path = file_path
         self.base_dir = base_dir
         self.log_file = log_file
@@ -19,9 +19,9 @@ class DataAssistant:
         self.assistant = None
         self.thread = None
 
-        self.initialize_assistant()
+        self.initialize_assistant(name, instruction)
 
-    def initialize_assistant(self):
+    def initialize_assistant(self, name, instruction):
         if self.config_manager.config_exists():
             self.config = self.config_manager.load_from_file()
             self.file = type('obj', (object,), {'id': self.config['file_id']})
@@ -30,12 +30,12 @@ class DataAssistant:
             self.assistant_dir = os.path.join(self.base_dir, f"assistant_{self.assistant.id}")
             self.logger.set_log_file(os.path.join(self.assistant_dir, "assistant_log.txt"))
         else:
-            self.setup_new_assistant()
+            self.setup_new_assistant(name, instruction)
 
-    def setup_new_assistant(self):
+    def setup_new_assistant(self, name, instruction):
         try:
             self.file = self.upload_file(self.file_path)
-            self.assistant = self.create_assistant()
+            self.assistant = self.create_assistant(name, instruction)
             self.thread = self.create_thread()
             self.assistant_dir = os.path.join(self.base_dir, f"assistant_{self.assistant.id}")
             os.makedirs(self.assistant_dir, exist_ok=True)
@@ -48,8 +48,8 @@ class DataAssistant:
     def upload_file(self, file_path):
         return self.client.upload_file(file_path)
 
-    def create_assistant(self):
-        return self.client.create_assistant(self.file.id)
+    def create_assistant(self,name, instruction):
+        return self.client.create_assistant(self.file.id, name, instruction)
 
     def create_thread(self):
         return self.client.create_thread()
