@@ -1,18 +1,90 @@
-# CodeInterpreter-Assistant
-This repository hosts the DataAssistant, a robust Python class designed to integrate seamlessly with OpenAI's API. It facilitates the creation, management, and interaction with threads, assistants, and file uploads specifically tailored to handle and execute code.
+# AI Assistant with OpenAI
 
-Key Features:
+This repository contains the code for building and deploying an AI Assistant using OpenAI's API, which includes capabilities for processing and analyzing data with a powerful code interpreter. This AI Assistant is designed to interact with backend systems, providing data-driven insights and automated responses based on natural language queries.
 
-File Management: Automatically handles file uploads necessary for data processing and interaction.
-Assistant Creation: Easily sets up and configures custom OpenAI Assistants designed to interact with data-driven queries.
-Thread Management: Manages threads for ongoing conversations and data interactions, providing a structured approach to querying and response handling.
-Code Execution: Includes a code interpreter tool that allows dynamic execution of code snippets, enhancing the assistant's ability to process and analyze data directly through OpenAI's platform.
-Ideal Use-Cases:
+## Features
 
-Developers looking to build AI-powered data analysis tools.
-Teams in need of a scalable solution to manage data queries and responses via AI.
-Researchers requiring automated, intelligent data processing and visualization.
-Getting Started:
-To get started with the DataAssistant, clone the repository, set your OpenAI API key as an environment variable, and refer to the README for installation and operation instructions.
+- **AI Assistant Initialization**: Set up an AI assistant that can execute code, analyze data, and provide actionable insights.
+- **Data File Management**: Upload and manage files directly through the OpenAI API, allowing the AI to work with specific datasets.
+- **Advanced Data Analysis**: Use the code interpreter tool to process data queries and return results including diagrams, charts, and CSV files.
+- **Logging and Error Handling**: Incorporate sophisticated logging for debugging and monitoring the assistant’s operations.
 
-This repository is an excellent resource for anyone looking to enhance their applications with powerful AI capabilities, providing both the tools and the framework necessary for advanced data interaction.
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8 or later
+- OpenAI API key
+
+### Installation
+
+1. Clone the repository:
+
+    ```sh
+    git clone https://github.com/mohamadawaisy/CodeInterpreter-Assistant.git
+    cd CodeInterpreter-Assistant
+    ```
+
+2. Install the required dependencies:
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+### Configuration
+
+1. Create a `config.json` file in the root directory with your OpenAI API key:
+
+    ```json
+    {
+        "openai_api_key": "your_openai_api_key"
+    }
+    ```
+
+## Usage
+
+1. Import the `DataAssistant` class:
+
+    ```python
+    from data_assistant.assistant import DataAssistant
+    ```
+
+2. Initialize the `DataAssistant`:
+
+    ```python
+    assistant = DataAssistant("path_to_your_data_file.csv")
+    ```
+
+3. Interact with the AI Assistant:
+
+    ```python
+    # Ask a question
+    response = assistant.ask_question("What insights can you provide about recent sales data?")
+    print(response)
+
+    # Follow-up question
+    follow_up_question = "Can you break down the sales by product category?"
+    follow_up_response = assistant.follow_up_question(follow_up_question)
+    print(follow_up_response)
+
+    # Advanced Data Analysis
+    analysis_result = assistant.ask_question("Generate a sales forecast for the next quarter.")
+    print(analysis_result)
+    ```
+
+## Contributing
+
+Contributions are welcome! Fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or support, please open an issue on the GitHub repository.
+
+Project Link: [https://github.com/mohamadawaisy/CodeInterpreter-Assistant](https://github.com/mohamadawaisy/CodeInterpreter-Assistant)
+
+Article: https://medium.com/@mr.ma.swi/a-step-by-step-guide-with-openais-assistant-and-code-interpreter-ac19d07af9e0
+
