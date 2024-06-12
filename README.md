@@ -86,8 +86,5 @@ For any inquiries or support, please open an issue on the GitHub repository.
 
 Project Link: [https://github.com/mohamadawaisy/CodeInterpreter-Assistant](https://github.com/mohamadawaisy/CodeInterpreter-Assistant)
 
-
-## Contact
-
-For questions or suggestions, please open an issue in this repository.
+Article: https://medium.com/@mr.ma.swi/a-step-by-step-guide-with-openais-assistant-and-code-interpreter-ac19d07af9e0
 
