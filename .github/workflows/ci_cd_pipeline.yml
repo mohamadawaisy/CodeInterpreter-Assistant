@@ -23,7 +23,7 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        scp -o StrictHostKeyChecking=no -r . ubuntu@${{ secrets.EC2_HOST }}:/home/ubuntu/CodeInterpreter-Assistant
+        scp -o StrictHostKeyChecking=no -r * ubuntu@${{ secrets.EC2_HOST }}:/home/ubuntu/CodeInterpreter-Assistant
 
     - name: Run deployment script on EC2
       run: |
