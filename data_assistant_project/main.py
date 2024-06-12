@@ -5,7 +5,7 @@ if __name__ == "__main__":
     # assistant.ask_question("Can you provide one insight about flight bookings?")
 
     while True:
-        follow_up = input("Enter your follow-up question (or type 'exit' to stop): ")
+        follow_up = input("Enter your follow-up question (or type 'exit' to stop): !!!")
         if follow_up.lower() == 'exit':
             print("Exiting the follow-up session.")
             break
