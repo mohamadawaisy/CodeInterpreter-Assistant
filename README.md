@@ -23,6 +23,8 @@ This repository contains the code for building and deploying an AI Assistant usi
     ```sh
     git clone https://github.com/mohamadawaisy/CodeInterpreter-Assistant.git
     cd CodeInterpreter-Assistant
+    python3 -m venv myenv
+    source myenv/bin/activate
     ```
 
 2. Install the required dependencies:
